@@ -1,3 +1,14 @@
+const mongoose = require('mongoose');
+
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => {
+    console.log("MongoDB connected!");
+  })
+  .catch((err) => {
+    console.error("MongoDB connection error:", err);
+  });
+
+
 const cookieParser = require('cookie-parser');
 const express = require('express');
 const app = express();
@@ -5,6 +16,8 @@ const path = require('path');
 const userModel = require("./models/user");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+
+
 
 
 
