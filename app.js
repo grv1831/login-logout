@@ -45,6 +45,8 @@ app.post("/create", (req,res) => {
 
       let token = jwt.sign({email}, "hihihi")
       res.cookie("token", token);
+
+      res.redirect("/");
     })
   })
 })
